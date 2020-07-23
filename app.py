@@ -15,7 +15,7 @@ def predict():
     '''
     For rendering results on HTML GUI
     '''
-    test_image=image.load_img(request.form.values(),target_size = (64, 64))
+    test_image=request.form.values()
     test_image=image.img_to_array(test_image) #converts it into 3d array
     test_image=np.expand_dims(test_image,axis=0)
    
