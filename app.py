@@ -11,14 +11,14 @@ def home():
 
 @app.route('/predict',methods=['GET', 'POST'])
 def predict():
-    from keras.preprocessing import Image
+    from keras.preprocessing import image
     '''
     For rendering results on HTML GUI
     '''
     if request.method == 'POST':
         
-        test_image=Image.open(request.files['pic'])
-        test_image=Image.img_to_array(test_image) #converts it into 3d array
+        test_image=image.load_img(request.files['pic'],target_size = (64, 64))
+        test_image=image.img_to_array(test_image) #converts it into 3d array
         test_image=np.expand_dims(test_image,axis=0)
    
         prediction = model.predict(test_image)
