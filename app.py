@@ -9,7 +9,7 @@ model = pickle.load(open('model.pkl', 'rb'))
 def home():
     return render_template('index.html')
 
-@app.route('/predict',methods=['POST'])
+@app.route('/predict',method="POST")
 def predict():
     from keras.preprocessing import image
     '''
