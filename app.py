@@ -15,15 +15,17 @@ def predict():
     '''
     For rendering results on HTML GUI
     '''
-    test_image=image.load_img(request.form['Picture'],target_size = (64, 64))
-    test_image=image.img_to_array(test_image) #converts it into 3d array
-    test_image=np.expand_dims(test_image,axis=0)
+    if request.method == 'POST':
+        
+        test_image=image.load_img(request.form['Picture'],target_size = (64, 64))
+        test_image=image.img_to_array(test_image) #converts it into 3d array
+        test_image=np.expand_dims(test_image,axis=0)
    
-    prediction = model.predict(test_image)
-    if(prediction[0]==0):
-        output="Cat!!"
-    else:
-        output="Dog!!"
+        prediction = model.predict(test_image)
+        if(prediction[0]==0):
+            output="Cat!!"
+        else:
+            output="Dog!!"
     
 
     return render_template('index.html', prediction_text='Your animal is a : {}'.format(output))
