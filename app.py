@@ -17,7 +17,7 @@ def predict():
     '''
     if request.method == 'POST':
         
-        test_image=image.load_img(request.files['pic'],target_size = (64, 64))
+        test_image=image.load_img(request.files.get('pic'),target_size = (64, 64))
         test_image=image.img_to_array(test_image) #converts it into 3d array
         test_image=np.expand_dims(test_image,axis=0)
    
