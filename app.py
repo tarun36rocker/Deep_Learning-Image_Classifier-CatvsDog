@@ -22,16 +22,17 @@ from gevent.pywsgi import WSGIServer
 app = Flask(__name__)
 model = pickle.load(open('model.pkl', 'rb'))
 
-@app.route('/')
-def home():
-    return render_template('index.html')
 def model_predict(img_path, model):
     test_image = image.load_img(img_path, target_size=(64, 64))
     test_image=image.img_to_array(test_image) #converts it into 3d array
     test_image=np.expand_dims(test_image,axis=0)
     prediction = model.predict(test_image)
-    
     return prediction
+
+@app.route('/')
+def home():
+    return render_template('index.html')
+
 
 
 @app.route('/predict',methods=['GET', 'POST'])
