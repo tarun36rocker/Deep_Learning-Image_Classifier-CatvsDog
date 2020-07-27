@@ -17,10 +17,7 @@ def predict():
     '''
     if request.method == 'POST':
         if request.files:
-            pic=request.files['pic']
-            print(pic)
-            return redirect(request.url)
-            '''test_image=image.load_img(request.files['pic'],target_size = (64, 64))
+            test_image=image.load_img(request.files['pic'],target_size = (64, 64))
             test_image=image.img_to_array(test_image) #converts it into 3d array
             test_image=np.expand_dims(test_image,axis=0)
    
@@ -28,7 +25,7 @@ def predict():
             if(prediction[0]==0):
                 output="Cat!!"
             else:
-                output="Dog!!" '''
+                output="Dog!!" 
     
 
     return render_template('index.html', prediction_text='Your animal is a : {}'.format(output))
