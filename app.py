@@ -21,7 +21,7 @@ from werkzeug.utils import secure_filename
 from gevent.pywsgi import WSGIServer
 
 app = Flask(__name__)
-UPLOAD_FOLDER ='.'
+UPLOAD_FOLDER ='https://github.com/tarun36rocker/Flask-CatvsDog/tree/master/UPLOAD_FOLDER'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 model = pickle.load(open('model.pkl', 'rb'))
 
@@ -48,7 +48,7 @@ def predict():
         print("FILE PATH IS : ",file_path)
         # Make prediction
         prediction = model_predict(file_path, model)
-        if(prediction==[0]):
+        if(prediction[0]==0):
             output="Cat!!"
         else:
             output="Dog!!"
