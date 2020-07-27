@@ -1,7 +1,7 @@
 import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pickle
-from __future__ import division, print_function
+
 # coding=utf-8
 import sys
 import os
