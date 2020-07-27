@@ -21,7 +21,7 @@ from werkzeug.utils import secure_filename
 from gevent.pywsgi import WSGIServer
 
 app = Flask(__name__)
-UPLOAD_FOLDER ="https://github.com/tarun36rocker/Flask-CatvsDog/tree/master/UPLOAD_FOLDER"
+UPLOAD_FOLDER ='UPLOAD_FOLDER'
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 model = pickle.load(open('model.pkl', 'rb'))
 
