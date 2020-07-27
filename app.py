@@ -45,7 +45,7 @@ def predict():
             basepath, 'uploads', secure_filename(f.filename))
         f.save(file_path)
         # Make prediction
-        preds = model_predict(file_path, model)
+        prediction = model_predict(file_path, model)
         if(prediction[0]==0):
             output="Cat!!"
         else:
