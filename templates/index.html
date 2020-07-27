@@ -18,7 +18,7 @@
 
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="POST">
-    	<input name="pic" type="file" accept="image/png, image/jpeg , image/jpg" placeholder="Picture" required="required"  />
+    	<input name="pic" type="file" accept="image/*" placeholder="Picture" required="required"  />
         <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
     </form>
 
