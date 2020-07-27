@@ -43,7 +43,7 @@ def predict():
     if request.method == 'POST':
         # Get the file from post request
         f = request.files['file']
-        file_path=file.save(os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(f.filename)))
+        file_path= os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(f.filename))
         f.save(file_path)
         print("FILE PATH IS : ",file_path)
         # Make prediction
