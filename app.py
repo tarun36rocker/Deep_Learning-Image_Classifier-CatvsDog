@@ -1,4 +1,4 @@
-from __future__ import division, print_function
+
 import numpy as np
 from flask import Flask, request, jsonify, render_template
 import pickle
