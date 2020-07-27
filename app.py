@@ -21,6 +21,8 @@ from werkzeug.utils import secure_filename
 from gevent.pywsgi import WSGIServer
 
 app = Flask(__name__)
+UPLOAD_FOLDER ='https://github.com/tarun36rocker/Flask-CatvsDog/tree/master/uploads'
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 model = pickle.load(open('model.pkl', 'rb'))
 
 def model_predict(img_path, model):
@@ -42,8 +44,9 @@ def predict():
         # Get the file from post request
         f = request.files['file']
         # Save the file to ./uploads
-        basepath = os.path.dirname(__file__)
-        file_path = os.path.join(basepath, 'uploads', secure_filename(f.filename))
+        '''basepath = os.path.dirname(__file__)
+        file_path = os.path.join(basepath, 'uploads', secure_filename(f.filename))'''
+        file_path=file.save(os.path.join(app.config['UPLOAD_FOLDER'], f.filename))
         f.save(file_path)
         # Make prediction
         prediction = model_predict(file_path, model)
