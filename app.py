@@ -25,7 +25,7 @@ model = pickle.load(open('model.pkl', 'rb'))
 
 
 
-UPLOAD_FOLDER = '/static/uploads/'
+UPLOAD_FOLDER = 'tree/master/static/uploads'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 
 app = Flask(__name__)
