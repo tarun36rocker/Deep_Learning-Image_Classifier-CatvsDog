@@ -22,10 +22,6 @@ from gevent.pywsgi import WSGIServer
 
 
 model = pickle.load(open('model.pkl', 'rb'))   
-import os
-
-from flask import Flask, render_template, request
-
 
 
 
