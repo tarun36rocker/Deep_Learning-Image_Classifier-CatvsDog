@@ -25,7 +25,7 @@ model = pickle.load(open('model.pkl', 'rb'))
 
 
 
-UPLOAD_FOLDER = 'tree/master/static/uploads'
+UPLOAD_FOLDER = '/static/uploads'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg', 'gif'])
 
 app = Flask(__name__)
@@ -51,7 +51,7 @@ def home_page():
 def predict():
     if request.method == 'POST':
         if 'file' not in request.files:
-            return render_template('index.html', prediction_text='File Error ! ')
+            return render_template('index.html', prediction_text='No file at all ! ! ')
         file = request.files['file']
 
         if file.filename == '':
