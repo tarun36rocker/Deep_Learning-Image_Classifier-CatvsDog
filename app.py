@@ -50,7 +50,8 @@ def home_page():
 @app.route('/predict',methods=['GET', 'POST'])
 def predict():
     if request.method == 'POST':
-        
+        if 'file' not in request.files:
+            return render_template('index.html', prediction_text='No file at all ! ! ')
         file = request.files['file']
 
         if file.filename == '':
