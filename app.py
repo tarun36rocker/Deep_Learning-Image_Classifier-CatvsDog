@@ -54,7 +54,6 @@ def home_page():
 @app.route('/predict',methods=['GET', 'POST'])
 def upload_page():
     if request.method == 'POST':
-
         if 'file' not in request.files:
             return render_template('index.html', prediction_text='File Error ! ')
         file = request.files['file']
