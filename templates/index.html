@@ -1,34 +1,101 @@
-  
 <!DOCTYPE html>
 <html >
 <!--From https://codepen.io/frytyler/pen/EGdtg-->
 <head>
   <meta charset="UTF-8">
-  <title>DL API</title>
+  <title>Dog vs Cat Classifier</title>
   <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> 
 </head>
+<style>
+  .box{
+    width:750px;
+    height:1000px;
+    padding:10px;
+    margin:100px auto;
+    box-shadow:0px 0px 10px 2px  blue;
+    border : 2px solid blue;
+    background-image:url(https://image.freepik.com/free-vector/smooth-blue-with-purple-vignette-studio-well-use-as-background_40163-62.jpg);
+    background-size:cover;
+    
+  }
+  
+</style>
 
-<body background="https://i1.pngguru.com/preview/287/731/669/cat-and-dog-cartoon-photographic-filter-drawing-camera-kawaii-cuteness-nose-snout-png-clipart.jpg">
- <div class="login">
-	<b><i><u><h1 style="text-align:center">Image Classifier : Cat vs Dog !</h1></i></b></u></font>
-	<b><i><u><h1 style="text-align:center">Enter a picture in the magic machine !!</h1></i></b></u></font>
 
-     <!-- Main Input For Receiving Query to our ML -->
+<div class="ui container">
+<body style="background-color:rgb(159, 228, 165);">
+  <div class="ui left demo vertical inverted sidebar labeled icon menu">
+    <a class="item">
+      <i class="home icon"></i>
+      Home
+    </a>
+    <a class="item">
+      <i class="block layout icon"></i>
+      Topics
+    </a>
+    <a class="item">
+      <i class="smile icon"></i>
+      Friends
+    </a>
+  </div>
+  <div class="ui top fixed huge active inverted teal menu">
+    <a class="purple item">Dog vs Cat Deep Learning Classifier</a> 
+    <div class="right menu">
+      <button class="ui  facebook icon button" onclick="window.location.href='https://www.facebook.com/'">
+        <i class="facebook icon"></i>
+    </button>
+    <button class="ui  instagram icon button" onclick="window.location.href='http://www.instagram.com'">
+      <i class="instagram icon"></i>
+  </button>
+  <button class="ui  linkedin icon button" onclick="window.location.href='http://www.linkedin.com'">
+    <i class="linkedin icon"></i>
+</button>
+<button class="ui youtube icon button" onclick="window.location.href='http://www.youtube.com'">
+  <i class="youtube icon"></i>
+</button></div></div>
+ 
+
+ 
+  
+<div class="box">
+	
+
+
+  <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="POST" enctype="multipart/form-data">
-    	<input name="file" type="file" accept=".png, .jpg, .jpeg" placeholder="Picture" required="required"  />
-        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    <div class="ui divider"></div>
+    <div class="inline field">
+    <div class="ui left corner labeled icon input">  
+    <input name="file" type="file" accept=".png, .jpg, .jpeg" placeholder="Picture" required="required"  />
+    <i class="inverted circular search link icon"></i>
+    <div class="ui left corner label">
+      <i class="asterisk icon"></i>
+    </div>
+  </div>
+    <div class="ui left pointing label">
+      Enter a picture of your cute Dog or cat to get the result !
+    </div>
+    
+    <br><br><br><br><br><br><br><br><br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+    <button type="submit" class="ui purple huge animated button">
+    <div class="visible content">Predict</div>
+            <div class="hidden content">
+            <i class="upload icon"></i>
+            </div></button>
     </form>
 
-   <br>
-   <br>
-   <p style="color:blue;font-size:50px;"><b>{{ prediction_text }}</b></p>
+  <br>
+  <br>
+  <p style="color:rgb(108, 92, 134);font: size 50;px;"><b>{{ prediction_text }}</b></p>
 
- </div>
+</div>
 
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
 </body>
+</div>
 </html>
