@@ -68,7 +68,7 @@ def predict():
                 
             else:
                 output="Dog!!"
-                pic='https://i.guim.co.uk/img/media/0066dcfba6a78be6443463869a3c4904f478685e/282_70_2721_1632/500.jpg?quality=85&auto=format&fit=max&s=69e8dd02ee62c6ee8a8f458264243c24'
+                pic='https://www.bentonsroadvet.com.au/wp-content/uploads/2016/07/Dental%20problems-.png'
             return render_template('final.html', prediction_text='Your animal is a : {}'.format(output),pic=pic)
             
 
