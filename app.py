@@ -14,6 +14,7 @@ import numpy as np
 from keras.applications.imagenet_utils import preprocess_input, decode_predictions
 from keras.models import load_model
 from keras.preprocessing import image
+from tensorflow.keras.models import Sequential
 
 # Flask utils
 from flask import Flask, redirect, url_for, request, render_template
@@ -63,12 +64,15 @@ def predict():
             prediction = model_predict(file_path, model)
             if(prediction[0]==0):
                 output="Cat!!"
+                return render_template('final.html', prediction_text='Your animal is a : {}'.format(output),pic="https://static.toiimg.com/thumb/msid-67586673,width-800,height-600,resizemode-75,imgsize-3918697,pt-32,y_pad-40/67586673.jpg")
             else:
                 output="Dog!!"
+                return render_template('final.html', prediction_text='Your animal is a : {}'.format(output),pic="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=1.00xw:0.669xh;0,0.190xh&resize=1200:*")
 
-            return render_template('index.html', prediction_text='Your animal is a : {}'.format(output))
-   
+            
+
+
 
 if __name__ == '__main__':
-    app.run(debug = True)
+    app.run(debug=True)
     
