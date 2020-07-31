@@ -10,21 +10,6 @@
 <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"> 
 </head>
-<style>
-  .box{
-    width:750px;
-    height:1000px;
-    padding:10px;
-    margin:100px auto;
-    box-shadow:0px 0px 10px 2px  blue;
-    border : 2px solid blue;
-    background-image:url(https://image.freepik.com/free-vector/smooth-blue-with-purple-vignette-studio-well-use-as-background_40163-62.jpg);
-    background-size:cover;
-    
-  }
-  
-</style>
-
 <body style="background-color:rgb(159, 228, 165);">
 <div class="ui container">
 
@@ -61,14 +46,25 @@
 
  
   
-<div class="box">
+
 	
 <br><br><br><br><br><br><br><br><br><br><br>
 
 
 <p style="color:rgb(255, 255, 255);font: size 50;px;"><b>{{ prediction_text }}</b></p>
-<img src=url({{ pic }})>
-
+<style>
+  .final{
+    width:300px;
+    height:500px;
+    padding:10px;
+    margin:100px auto;
+    box-shadow:0px 0px 10px 2px  blue;
+    border : 2px solid blue;
+	  background-image:url( {{ pic }});
+    background-size:cover;
+  } 
+</style>
+<div class="final">
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
