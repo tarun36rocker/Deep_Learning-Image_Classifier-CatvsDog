@@ -64,11 +64,11 @@ def predict():
             prediction = model_predict(file_path, model)
             if(prediction[0]==0):
                 output="Cat!!"
-                pic='https://rocketpopmedia.com/wp-content/uploads/2011/12/500x300.jpeg'
+                pic='http://pets.amerikanki.com/wp-content/uploads/2019/01/Benefits-of-Owning-a-Cat-500x300.jpg'
                 
             else:
                 output="Dog!!"
-                pic='https://www.bentonsroadvet.com.au/wp-content/uploads/2016/07/Dental%20problems-.png'
+                pic='http://pets.amerikanki.com/wp-content/uploads/2014/05/Best_Small_Dog_Breeds_for_Indoor_Pets-500x300.png'
             return render_template('final.html', prediction_text='Your animal is a : {}'.format(output),pic=pic)
             
 
